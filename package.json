@@ -1,5 +1,5 @@
 {
-  "name": "new-app",
+  "name": "countries-by-region",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
