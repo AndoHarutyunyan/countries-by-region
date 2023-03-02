@@ -4,7 +4,7 @@ export default function CountryCard(props) {
   return (
     <Link
       to={`/countryDetail/${props.countryData.name.common}`}
-      className="w-80 h-72 border-neutral-300 border p-2.5 cursor-pointer rounded-2 rounded-lg mt-10 mx-2.5 hover:mt-5"
+      className="w-80 h-72 border-neutral-300 border p-2.5 cursor-pointer  rounded-lg mt-10 mx-2.5 hover:mt-5"
     >
       <div className="rounded-lg mb-2.5 border-neutral-300 border h-52">
         <img

@@ -12,51 +12,56 @@ export default function CountryDetail() {
     dispatch(getCountryByName(params.country));
   }, []);
   return (
-    <>
-      <h1>{country[0]?.name.official}</h1>
-      <div className="flex">
-        <section>
-          <div>
-            <h3>Flag</h3>
-            <div>
-              <img src={country[0]?.flags.png} alt="flag" />
+    <div className="px-5">
+      <h1 className="text-center text-2xl font-bold mb-10">
+        {country[0]?.name.official}
+      </h1>
+      <div className="flex justify-center  items-center flex-col sm:items-start sm:flex-row">
+        <section className="mr-5 mb-5">
+          <div className="mb-5">
+            <h3 className="mb-3">Flag</h3>
+            <div className="w-64 h-40 rounded-lg border-neutral-300 border">
+              <img
+                className="rounded-lg w-full h-full object-cover"
+                src={country[0]?.flags.png}
+                alt="flag"
+              />
             </div>
           </div>
           <div>
-            <h3>Coat Of Arms</h3>
-            <div>
-              <img src={country[0]?.coatOfArms.png} alt="coatOfArms" />
+            <h3 className="mb-3">Coat Of Arms</h3>
+            <div className="w-64 h-40 rounded-lg">
+              <img
+                className="rounded-lg w-full h-full object-contain"
+                src={country[0]?.coatOfArms.png}
+                alt="coatOfArms"
+              />
             </div>
           </div>
         </section>
         <section>
           <ul>
-            <li>
-              capital:
-              <span>{country[0]?.capital[0]}</span>
+            <li className="text-slate-400 flex mb-2.5 items-center">
+              <span className="w-24 block">capital:</span>
+              <span className="text-slate-800 text-base font-semibold">
+                {country[0]?.capital[0]}
+              </span>
             </li>
-            <li>
-              languages:
-              <span>{country[0]?.languages.hye}</span>
+            <li className="text-slate-400 flex mb-2.5 items-center">
+              <span className="w-24 block">population:</span>
+              <span className="text-slate-800 text-sm font-semibold">
+                {country[0]?.population}
+              </span>
             </li>
-            <li>
-              population:
-              <span>{country[0]?.population}</span>
+            <li className="text-slate-400 flex mb-2.5 items-center">
+              <span className="w-24 block">area:</span>
+              <span className="text-slate-800 text-sm font-semibold">
+                {country[0]?.area}
+              </span>
             </li>
           </ul>
-          <div className="w-96 h-60 rounded-lg border-neutral-300 border">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1563246.0242156957!2d45.040741000000004!3d40.070618499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40155684e773bac7%3A0xd0b4757aeb822d23!2z0JDRgNC80LXQvdC40Y8!5e0!3m2!1sru!2sam!4v1677511914673!5m2!1sru!2sam"
-            //   width="200"
-            //   height="150"
-              //   style="border:0;"
-              //   allowfullscreen=""
-              //   loading="lazy"
-              //   referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }
